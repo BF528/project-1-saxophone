@@ -20,15 +20,15 @@ data_norm <- rma(data_affy) # rma algorithm
 ## 3. Plot RLE and NUSE
 data_plm <- fitPLM(data_affy, normalize = T, background = T)
 
-result_rle <- RLE(data_plm,type="stats")
+result_rle <- RLE(data_plm, type = "stats")
 median_rle <- result_rle[1,] # extract median results
 hist(median_rle, main = 'Histogram of median for rle',
      xlab = 'median for rle',col = 'black', nclass = 10)
 
-result_nuse <- NUSE(data_plm,type="stats")
+result_nuse <- NUSE(data_plm, type = "stats")
 median_nuse <- result_nuse[1,]
-hist(median_nuse, main="Histogram of median RLE", 
-     xlab="median RLE", col="black", nclass=10)
+hist(median_nuse, main = "Histogram of median RLE", 
+     xlab = "median RLE", col = "black", nclass = 10)
 
 ## 4. csv file for RMA normalized
 norm_exprs <- exprs(data_norm)
@@ -38,12 +38,12 @@ write.csv(norm_exprs, 'normdata.csv')
 metadata <- read.csv("/project/bf528/project_1/doc/proj_metadata.csv")
 mod <- model.matrix(~normalizationcombatmod, data = metadata)
 combat_adj <- ComBat(dat = norm_exprs, batch = metadata$normalizationcombatbatch, mod = mod)
-write.csv(combat_adj,'combat_adj.csv')
+write.csv(combat_adj, 'combat_adj.csv')
 
 ## 6. PCA : 2 PCs explain about 20% for total variablity.
 combat_adj_t <-t(combat_adj)
-combat_scaled <-t(scale(combat_adj_t, center=TRUE,scale=TRUE))
-combat_pca <-prcomp(combat_scaled,scale=FALSE,center = FALSE)
+combat_scaled <-t(scale(combat_adj_t, center = TRUE, scale = TRUE))
+combat_pca <-prcomp(combat_scaled, scale = FALSE, center = FALSE)
 summary(combat_pca)
 combat_pca$rotation
 
