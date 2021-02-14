@@ -7,7 +7,7 @@ Marisa et al. Gene Expression Classification of Colon Cancer into Molecular Subt
 
 # Contributors
 
-Daniel Goldstein - Data Curator - djgoldst,
+Daniel Goldstein - Data Curator - djgoldst
 Sooyoun Lee - Programmer - 
 Jason Rose - Biologist - 
 Yilin (Sunny) Yang - Analyst - 
