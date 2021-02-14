@@ -1,4 +1,4 @@
-# install packages 'Bioconductor' and some libraries(R 4.0.3 version)
+## 1. install packages 'Bioconductor' and some libraries(R 4.0.3 version)
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install(version = "3.12")
