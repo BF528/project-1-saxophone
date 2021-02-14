@@ -13,11 +13,8 @@ library(ggplot2)
 
 
 ## 2. Read CEL files and Normalize
-# read all 134 gz files
-files = list.files("/projectnb/bf528/users/saxophone/project_1/samples/CEL_files", full.names = TRUE)
-length(files) # check 134 files
-
-data_affy <- ReadAffy(filenames=files) # read gz files, not unzipping.
+directory <- '/projectnb/bf528/users/saxophone/project_1/samples/'
+data_affy <- ReadAffy(celfile.path = directory) 
 data_norm <- rma(data_affy) # rma algorithm
 
 ## 3. Plot RLE and NUSE
@@ -38,7 +35,7 @@ norm_exprs <- exprs(data_norm)
 write.csv(norm_exprs, 'normdata.csv')
 
 ## 5. Batch effects Correction
-metadata <- read.csv("/projectnb/bf528/users/saxophone/project_1/samples/proj_metadata.csv")
+metadata <- read.csv("/project/bf528/project_1/doc/proj_metadata.csv")
 mod <- model.matrix(~normalizationcombatmod, data = metadata)
 combat_adj <- ComBat(dat = norm_exprs, batch = metadata$normalizationcombatbatch, mod = mod)
 write.csv(combat_adj,'combat_adj.csv')
