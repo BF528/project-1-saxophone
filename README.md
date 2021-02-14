@@ -1,11 +1,17 @@
-# Project Description
+# Microarray Based Tumor Classification
 
-A brief description of what this repository is for and what it contains
+The purpose of this project is to reproduce analysis of microarray data comparing C3 and C4 colon cancer tumor subtypes from Marisa et. al. Data obtained from GEO Accession #GSE39582
+
+Reference:
+Marisa et al. Gene Expression Classification of Colon Cancer into Molecular Subtypes: Characterization, Validation, and Prognostic Value. PLoS Medicine, May 2013.
 
 # Contributors
 
-List contributor names and github user names, or email addresses if desired
+Daniel Goldstein - Data Curator - djgoldst
+Sooyoun Lee - Programmer - 
+Jason Rose - Biologist - 
+Yilin (Sunny) Yang - Analyst - 
 
 # Repository Contents
 
-Provide a brief description of each script/code file in this repo, what it does, and how to execute it
+Brief description of each script/code file in this repo, what it does, and how to execute it.
