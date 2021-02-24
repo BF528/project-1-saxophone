@@ -16,4 +16,6 @@ Sunny Yang yang98@bu.edu - Analyst
 
 # Repository Contents
 
+Programmer.R - Data pre-processing and quality control script using the RMA algorithm to normalize all microarrays together, ComBat to correct for batch effects, and PCA to visualize the quality of the sample distribution.
 
+analyst_code.R - Data processing using noise filtering and dimension reduction, and data analysis using unsupervised hierarchical clustering to identify differential gene expression between the two clusters.
